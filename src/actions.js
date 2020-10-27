@@ -5,3 +5,6 @@ export const addTodo = (todo) => {
 export const changeDone = (id) => {
     return { type: "CHANGE_DONE", payload: id };
 }
+export const deleteItem = (id) => {
+    return { type: "DELETE_ITEM", payload: id };
+}

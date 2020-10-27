@@ -7,8 +7,8 @@ class TodoList extends Component {
     return (
       <div>
         <h1>TodoList</h1>
-        <TodoGeneratorContainer/>
         <TodoGroupContainer/>
+        <TodoGeneratorContainer/>
       </div>
     );
   }
