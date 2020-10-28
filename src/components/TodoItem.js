@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './TodoItem.css';
 
 class TodoItem extends Component {
     render() {
@@ -8,9 +9,11 @@ class TodoItem extends Component {
         const onX = () => {
             this.props.deleteItem(this.props.todo.id);
         }
+        const {todo:{done}} = this.props;
         return (
             <div>
-                <span onClick={onText} STYLE={this.props.todo.done ? "text-decoration:line-through" : ""}>{this.props.todo.text}</span>
+                <span onClick={onText} className={done ? "mark-done" : ""}> {this.props.todo.text}</span>
+                {/*<span onClick={onText} className={done ? "mark-done" : ""} style={{'textDecoration' : done  ? "line-through" : ""}}> {this.props.todo.text}</span>*/}
                 <span onClick={onX}> X</span>
             </div>
         );

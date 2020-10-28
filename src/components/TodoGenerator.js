@@ -13,7 +13,7 @@ class TodoGenerator extends Component {
 
     render() {
         return (
-            <div>
+            <div className="App">
                 <form onSubmit={this.onSubmit}>
                     <span>
                         <input type="text" name="todoInput" id="todoInput" />
