@@ -3,46 +3,29 @@ import TodoGeneratorContainer from './containers/TodoGeneratorContainer';
 import TodoGroupContainer from './containers/TodoGroupContainer';
 import DoneListContainer from './containers/DoneListContainer';
 import { BrowserRouter, Link, Switch, Route } from 'react-router-dom';
-import { getTodos } from './apis/todos';
-import { connect } from 'react-redux';
-import { initTodos } from './actions';
-import React from 'react';
+import { Menu } from 'antd';
+import { PlusSquareOutlined , CheckSquareOutlined } from '@ant-design/icons';
 
-class App extends React.Component {
-  componentDidMount() {
-    getTodos().then(response => {
-      this.props.initTodos(response.data);
-    })
-  }
-
-
-  render() {
-    return (
-      <div>
-        <header>
-          <BrowserRouter>
-            <ul>
-              <li>
-                <Link to="/">add todo</Link>
-              </li>
-              <li>
-                <Link to="/todos">go to list</Link>
-              </li>
-              <li>
-                <Link to="/done">go to done list</Link>
-              </li>
-            </ul>
-            <Switch>
-              <Route exact path="/" component={TodoGeneratorContainer}></Route>
-              <Route path="/todos" component={TodoGroupContainer}></Route>
-              <Route path="/done" component={DoneListContainer}></Route>
-            </Switch>
-          </BrowserRouter>
-          {/* <TodoList/> */}
-        </header>
-      </div>
-    );
-  }
+function App() {
+  return (
+    <div>
+      <header>
+        <BrowserRouter>
+          <Menu mode="horizontal">
+            <Menu.Item icon={<PlusSquareOutlined />}><Link to="/">add todo</Link></Menu.Item>
+            <Menu.Item icon ={<CheckSquareOutlined />}><Link to="/done">go to done list</Link></Menu.Item>
+            <Menu.Item icon ={<CheckSquareOutlined />}><Link to="/todos">go to list</Link></Menu.Item>
+          </Menu >
+          <Switch>
+            <Route exact path="/" component={TodoGeneratorContainer}></Route>
+            <Route path="/todos" component={TodoGroupContainer}></Route>
+            <Route path="/done" component={DoneListContainer}></Route>
+          </Switch>
+        </BrowserRouter>
+        {/* <TodoList/> */}
+      </header>
+    </div>
+  );
 }
 
 const mapDispatchToProps = dispatch => ({
