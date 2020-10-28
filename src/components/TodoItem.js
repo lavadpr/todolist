@@ -15,12 +15,25 @@ class TodoItem extends Component {
                 this.props.deleteItem(this.props.todo.id);
             })
         }
+
+        const mystyle = {
+            color: "black",
+            padding: "10px",
+            fontFamily: "Arial",
+            textAlign: "right",
+          };
+
         const {todo:{done}} = this.props;
         return (
-            <div>
+            <div className="row">
+                 <div className="column">
+                <span className = "span-inner">
                 <span onClick={onText} className={done ? "mark-done" : ""}> {this.props.todo.text}</span>
-                {/*<span onClick={onText} className={done ? "mark-done" : ""} style={{'textDecoration' : done  ? "line-through" : ""}}> {this.props.todo.text}</span>*/}
-                <span onClick={onX}> X</span>
+                </span>
+                 </div>
+                 <div className= "column2">
+                <span onClick={onX} >X</span>
+                 </div>
             </div>
         );
     }

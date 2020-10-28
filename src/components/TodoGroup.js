@@ -7,7 +7,7 @@ class TodoGroup extends Component {
       <TodoItemContainer key={todo.id} todo={todo} />
     ));
     return (
-      <div className="App">
+      <div className="over-flow">
         {todos}
       </div>
     );
