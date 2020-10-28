@@ -5,5 +5,13 @@ export const getTodos = () => {
 }
 
 export const addTodo = (text) => {
-    return api.post("/api/todos", { text });
+    return api.post("/api/todos", {text: text});
+}
+
+export const deleteTodo = (id) => {
+    return api.delete("/api/todos/" + id);
+}
+
+export const updateTodo = (id, done) => {
+    return api.put("/api/todos/" + id, {done: !done});
 }
