@@ -4,13 +4,14 @@ import { addTodo } from '../apis/todos'
 
 class TodoGenerator extends Component {
     onSubmit = (event) => {
+        var todoText = event.target.todoInput.value;
         event.preventDefault();
-        addTodo(event.target.todoInput.value).then(() => {
+        addTodo(todoText).then(() => {
             const id = uuidv4();
-            const text = event.target.todoInput.value;
+            const text = todoText;
             const todo = { id, text, done: false };
             this.props.addTodo(todo);
-            event.target.todoInput.value = "";
+            todoText = "";
         })
     }
 
