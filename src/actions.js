@@ -8,3 +8,6 @@ export const changeDone = (id) => {
 export const deleteItem = (id) => {
     return { type: "DELETE_ITEM", payload: id };
 }
+export const initTodos = (todos) => {
+    return { type: "INIT_TODOS", payload: todos };
+}
