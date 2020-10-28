@@ -28,7 +28,11 @@ class TodoGenerator extends Component {
                         <Sider><input className="button-box" type="submit" value="Add Item" id="todoSubmit" /></Sider>
                         <Content><Input prefix={<UserOutlined />} type="text" name="todoInput" id="todoInput" /></Content>
                     </Layout>
-
+                    <h4 className ="body-letter">
+                    Hi hi,<br/><br/>this is ITA-5 Todo List React Application. This is where I put my To-do List. For the entire Bootcamp.<br/>
+                    You can track all my task here, and all the task that I've finished. ^_^
+                    </h4>
+                  
                 </form>
             </div>
         );

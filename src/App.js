@@ -28,9 +28,9 @@ class App extends React.Component {
         </header>
         <BrowserRouter>
           <Menu mode="horizontal">
-            <Menu.Item icon={<PlusSquareOutlined />}><Link to="/">add todo</Link></Menu.Item>
-            <Menu.Item icon={<CheckSquareOutlined />}><Link to="/done">go to done list</Link></Menu.Item>
-            <Menu.Item icon={<CheckSquareOutlined />}><Link to="/todos">go to list</Link></Menu.Item>
+            <Menu.Item icon={<PlusSquareOutlined />}><Link to="/">Add Task</Link></Menu.Item>
+            <Menu.Item icon={<CheckSquareOutlined />}><Link to="/done">Finished Task</Link></Menu.Item>
+            <Menu.Item icon={<CheckSquareOutlined />}><Link to="/todos">List of Task</Link></Menu.Item>
           </Menu>
           <Switch>
             <Route exact path="/" component={TodoGeneratorContainer}></Route>
