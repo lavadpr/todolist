@@ -10,6 +10,7 @@ const { Sider, Content } = Layout;
 class TodoGenerator extends Component {
     onSubmit = (event) => {
         event.preventDefault();
+        //extract variable value
         addTodo(event.target.todoInput.value).then(() => {
             const id = uuidv4();
             const text = event.target.todoInput.value;
@@ -19,12 +20,11 @@ class TodoGenerator extends Component {
         })
     }
 
-
     render() {
         return (
             <div className="App">
                 <form onSubmit={this.onSubmit}>
-                    <Layout>
+                    <Layout className="layout-design">
                         <Sider><input className="button-box" type="submit" value="Add Item" id="todoSubmit" /></Sider>
                         <Content><Input prefix={<UserOutlined />} type="text" name="todoInput" id="todoInput" /></Content>
                     </Layout>
