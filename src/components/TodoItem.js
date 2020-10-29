@@ -5,15 +5,14 @@ import { CloseCircleTwoTone } from '@ant-design/icons';
 
 class TodoItem extends Component {
     render() {
+        const id = this.props.todo.id;
         const onText = () => {
-            //extract the id
-            updateTodo(this.props.todo.id, this.props.todo.done).then(() => {
+            updateTodo(id, this.props.todo.done).then(() => {
                 this.props.changeDone(this.props.todo.id);
             })
         }
         const onDelete = () => {
-            //extract the id
-            deleteTodo(this.props.todo.id).then(() => {
+            deleteTodo(id).then(() => {
                 this.props.deleteItem(this.props.todo.id);
             })
         }
@@ -23,7 +22,6 @@ class TodoItem extends Component {
             <div className="row">
                 <div className="column">
                     <span className="span-inner">
-                        {/* extract the text */}
                         <span onClick={onText} className={done ? "mark-done" : ""}> {this.props.todo.text}</span>
                     </span>
                 </div>

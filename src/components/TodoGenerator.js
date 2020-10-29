@@ -9,15 +9,15 @@ const { Sider, Content } = Layout;
 
 class TodoGenerator extends Component {
     onSubmit = (event) => {
+        const value = event.target.todoInput.value;
         event.preventDefault();
-        //extract variable value
-        addTodo(event.target.todoInput.value).then(() => {
+        addTodo(value).then(() => {
             const id = uuidv4();
-            const text = event.target.todoInput.value;
+            const text = value;
             const todo = { id, text, done: false };
             this.props.addTodo(todo);
-            event.target.todoInput.value = "";
         })
+        event.target.todoInput.value = "";
     }
 
     render() {
