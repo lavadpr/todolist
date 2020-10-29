@@ -5,7 +5,7 @@ export const getTodos = () => {
 }
 
 export const addTodo = (text) => {
-    return api.post("/todos", {text: text});
+    return api.post("/todos", {text, done: false});
 }
 
 export const deleteTodo = (id) => {
